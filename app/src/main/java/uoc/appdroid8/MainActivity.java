@@ -3,11 +3,12 @@ package uoc.appdroid8;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
-import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import androidx.appcompat.widget.Toolbar;
+
+import uoc.appdroid8.entidades.ConexionSQLiteHelper;
 
 public class MainActivity extends AppCompatActivity  {
     WebView miVisorWeb;
@@ -19,9 +20,12 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Conexión a a base de datos
+        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "bd_appdroid8", null, 1);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        //Boton para ir atras en toolbar
+        //Botón para ir atrás en toolbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
