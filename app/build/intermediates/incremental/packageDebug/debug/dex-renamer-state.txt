@@ -1,0 +1,4 @@
+#Tue Nov 03 16:06:59 CET 2020
+base.0=D\:\\proyectos\\android\\AndroidPuzzleGame-Ultimo\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex

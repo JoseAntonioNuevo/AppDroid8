@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Puntuacion">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"/>
+
+    <include layout="@layout/content_puntuacion" />
+
+
+
+    <ListView
+        android:id="@+id/puntuaciones"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="180dp"
+        android:layout_width="250dp"
+        android:layout_height="300dp"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="69dp"
+        tools:layout_editor_absoluteY="197dp"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/niveles"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="540dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salector de niveles" />
+
+    <Button
+        android:id="@+id/reintentar"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="540dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reintentar" />
+
+    <TextView
+        android:id="@+id/punt"
+        android:layout_marginTop="130dp"
+        android:layout_marginLeft="76dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Puntuaciones totales"
+        />
+
+
+
+    <TextView
+        android:id="@+id/punt3"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bien hecho, has tardado "
+        />
+
+
+    <TextView
+        android:id="@+id/received_value_id"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="197dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="13 segundos "
+
+        />
+
+
+</android.support.design.widget.CoordinatorLayout>
