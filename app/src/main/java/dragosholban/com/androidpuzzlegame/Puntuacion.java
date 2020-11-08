@@ -1,13 +1,21 @@
 package dragosholban.com.androidpuzzlegame;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -37,6 +45,7 @@ public class Puntuacion extends AppCompatActivity {
     private Button niveles;
 
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,7 +80,8 @@ public class Puntuacion extends AppCompatActivity {
 
         registrarPuntuacion(punt);
         //deleteTitle(9999);
-        cargarDatos();
+
+        cargarDatos(punt);
 
         String punt1 = Integer.toString(punt);
 
@@ -79,7 +89,23 @@ public class Puntuacion extends AppCompatActivity {
 
         receiver_msg.setText(punt1+" segundos");
 
+
+
     }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void createNotificationChannel(){
+
+           CharSequence name = "¡Nuevo Record!";
+           String description = "Has logrado un nuevo record: puzle completado en 20 segundos";
+           int importance = NotificationManager.IMPORTANCE_DEFAULT;
+        NotificationChannel channel = new NotificationChannel("record", name, importance);
+        channel.setDescription(description);
+
+        NotificationManager notificationManager = getSystemService(NotificationManager.class);
+        notificationManager.createNotificationChannel(channel);
+    }
+
 
     public void openNiveles() {
        Intent intent = new Intent(this, MainActivity.class);
@@ -93,10 +119,11 @@ public class Puntuacion extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void cargarDatos(){
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void cargarDatos(int punt) {
         String dd;
         uoc.appdroid8.entidades.ConexionSQLiteHelper conn = new uoc.appdroid8.entidades.ConexionSQLiteHelper(this, "bd_appdroid8", null, 1);
-        SQLiteDatabase db= conn.getReadableDatabase();
+        SQLiteDatabase db = conn.getReadableDatabase();
         Cursor c = db.rawQuery("select * from puntuaciones ORDER BY id ASC", null);
         int cantidad = c.getCount();
         int i = 0;
@@ -105,34 +132,31 @@ public class Puntuacion extends AppCompatActivity {
         names = new ArrayList<String>();
 
         if (c.moveToFirst()) {
-            do{
+            do {
                 dd = c.getInt(0) + " Segundos";
                 names.add(dd);
-            }while(c.moveToNext());
+            } while (c.moveToNext());
 
         }
-
 
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, names);
         listview.setAdapter(adapter);
 
-        /*
-        String[] arreglo = new String[cantidad];
-        if (c.moveToFirst()) {
-            do{
-                String linea = c.getInt(0) + "" + c.getString(1);
-            arreglo[i] = linea;
-            }while(c.moveToNext());
+        int position = names.indexOf(punt+ " Segundos");
 
+        if (position==0) {
+            createNotificationChannel();
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "record")
+                    .setSmallIcon(R.drawable.ic_image_black_24dp)
+                    .setContentTitle("¡Nuevo Record!")
+                    .setContentText("Has logrado un nuevo record: puzzle completado en "+punt+" segundos")
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+            NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+            notificationManager.notify(100, builder.build());
         }
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arreglo);
-        ListView lista = (ListView) findViewById(R.id.puntuaciones);
-        lista.setAdapter(adapter);
-*/
     }
-
 
 
     //Registrar puntuación en base de datos
