@@ -88,6 +88,10 @@
         "source": "C:\\Users\\josew\\AndroidStudioProjects\\AndroidPuzzleGame-Ultimo\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_launcher_background.png"
     },
     {
+        "merged": "C:\\Users\\josew\\AndroidStudioProjects\\AndroidPuzzleGame-Ultimo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logobg.png.flat",
+        "source": "C:\\Users\\josew\\AndroidStudioProjects\\AndroidPuzzleGame-Ultimo\\app\\src\\main\\res\\drawable\\logobg.png"
+    },
+    {
         "merged": "C:\\Users\\josew\\AndroidStudioProjects\\AndroidPuzzleGame-Ultimo\\app\\build\\intermediates\\res\\merged\\debug\\layout_content_web.xml.flat",
         "source": "C:\\Users\\josew\\AndroidStudioProjects\\AndroidPuzzleGame-Ultimo\\app\\src\\main\\res\\layout\\content_web.xml"
     },

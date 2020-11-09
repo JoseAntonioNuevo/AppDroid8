@@ -1018,6 +1018,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_photo_camera_black_24dp
 drawable logo
+drawable logobg
 drawable logopuzzles
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
@@ -1087,6 +1088,7 @@ id bottom
 id buttonPanel
 id button_first
 id button_second
+id calendario
 id cameraButton
 id center
 id center_horizontal

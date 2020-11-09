@@ -11,6 +11,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -27,7 +28,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import static uoc.appdroid8.utilidades.Utilidades.CAMPO_ID;
 import static uoc.appdroid8.utilidades.Utilidades.CAMPO_PUNTUACION;
@@ -43,6 +46,7 @@ public class Puntuacion extends AppCompatActivity {
     TextView receiver_msg;
     private Button returnButton;
     private Button niveles;
+    private Button calendario;
 
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -63,6 +67,7 @@ public class Puntuacion extends AppCompatActivity {
 
         returnButton = findViewById(R.id.reintentar);
         niveles = findViewById(R.id.niveles);
+        calendario = findViewById(R.id.calendario);
 
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,10 +83,25 @@ public class Puntuacion extends AppCompatActivity {
             }
         });
 
+        calendario.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                Integer punt = intent.getIntExtra("puntuacion_puzzle", 0);
+                calendarEvent(punt);
+            }
+        });
+
+
         registrarPuntuacion(punt);
         //deleteTitle(9999);
 
         cargarDatos(punt);
+
+        //calendarEvent(punt);
+
+
 
         String punt1 = Integer.toString(punt);
 
@@ -106,6 +126,27 @@ public class Puntuacion extends AppCompatActivity {
         notificationManager.createNotificationChannel(channel);
     }
 
+
+    private void calendarEvent(Integer punt){
+
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+
+        Intent intent = new Intent(Intent.ACTION_INSERT);
+        intent.setData(CalendarContract.Events.CONTENT_URI);
+        intent.putExtra(CalendarContract.Events.TITLE, "Puntuaciones PuzzleDroid8");
+        intent.putExtra(CalendarContract.Events.DESCRIPTION, "Puntuación obtenida: "+punt+" segundos");
+        intent.putExtra("beginTime", calendar.getTimeInMillis());
+                intent.putExtra("allDay", false);
+                intent.putExtra("endTime", calendar.getTimeInMillis());
+
+        if(intent.resolveActivity(getPackageManager()) != null){
+            startActivity(intent);
+        }else{
+            Toast.makeText(Puntuacion.this, "No tienes calendario", Toast.LENGTH_SHORT).show();
+        }
+
+    }
 
     public void openNiveles() {
        Intent intent = new Intent(this, MainActivity.class);
@@ -139,16 +180,17 @@ public class Puntuacion extends AppCompatActivity {
 
         }
 
-
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, names);
         listview.setAdapter(adapter);
 
+        //Almacena la posición 0 del array
         int position = names.indexOf(punt+ " Segundos");
 
+        //Comprueba que la posición es 0, es decir la máxima puntuación
         if (position==0) {
             createNotificationChannel();
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "record")
-                    .setSmallIcon(R.drawable.ic_image_black_24dp)
+                    .setSmallIcon(R.drawable.logobg)
                     .setContentTitle("¡Nuevo Record!")
                     .setContentText("Has logrado un nuevo record: puzzle completado en "+punt+" segundos")
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT);
@@ -176,7 +218,7 @@ public class Puntuacion extends AppCompatActivity {
         values.put(CAMPO_ID,punt);
         Long idResultante=db.insert(TABLA_PUNTUACIONES, CAMPO_PUNTUACION,values);
 
-        Toast.makeText(getApplicationContext(),"¡Puzle Completado!",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),"¡Puzzle Completado!",Toast.LENGTH_SHORT).show();
 
     }
 

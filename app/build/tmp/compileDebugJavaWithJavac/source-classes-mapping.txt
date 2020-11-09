@@ -1,6 +1,6 @@
-dragosholban/com/androidpuzzlegame/FirstFragment.java
- dragosholban.com.androidpuzzlegame.FirstFragment
- dragosholban.com.androidpuzzlegame.FirstFragment$1
+dragosholban/com/androidpuzzlegame/PuzzleActivity.java
+ dragosholban.com.androidpuzzlegame.PuzzleActivity
+ dragosholban.com.androidpuzzlegame.PuzzleActivity$1
 dragosholban/com/androidpuzzlegame/entidades/Puntuacion.java
  uoc.appdroid8.entidades.Puntuacion
 dragosholban/com/androidpuzzlegame/utilidades/Utilidades.java
@@ -29,15 +29,16 @@ dragosholban/com/androidpuzzlegame/entidades/ConexionSQLiteHelper.java
 dragosholban/com/androidpuzzlegame/First2Fragment.java
  dragosholban.com.androidpuzzlegame.First2Fragment
  dragosholban.com.androidpuzzlegame.First2Fragment$1
-dragosholban/com/androidpuzzlegame/SecondFragment.java
- dragosholban.com.androidpuzzlegame.SecondFragment
- dragosholban.com.androidpuzzlegame.SecondFragment$1
-dragosholban/com/androidpuzzlegame/entidades/Usuario.java
- uoc.appdroid8.entidades.Usuario
-dragosholban/com/androidpuzzlegame/PuzzleActivity.java
- dragosholban.com.androidpuzzlegame.PuzzleActivity
- dragosholban.com.androidpuzzlegame.PuzzleActivity$1
 dragosholban/com/androidpuzzlegame/Puntuacion.java
  dragosholban.com.androidpuzzlegame.Puntuacion
  dragosholban.com.androidpuzzlegame.Puntuacion$1
  dragosholban.com.androidpuzzlegame.Puntuacion$2
+ dragosholban.com.androidpuzzlegame.Puntuacion$3
+dragosholban/com/androidpuzzlegame/entidades/Usuario.java
+ uoc.appdroid8.entidades.Usuario
+dragosholban/com/androidpuzzlegame/SecondFragment.java
+ dragosholban.com.androidpuzzlegame.SecondFragment
+ dragosholban.com.androidpuzzlegame.SecondFragment$1
+dragosholban/com/androidpuzzlegame/FirstFragment.java
+ dragosholban.com.androidpuzzlegame.FirstFragment
+ dragosholban.com.androidpuzzlegame.FirstFragment$1
