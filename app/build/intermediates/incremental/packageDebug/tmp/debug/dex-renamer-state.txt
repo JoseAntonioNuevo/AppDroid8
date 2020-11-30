@@ -1,4 +1,4 @@
-#Mon Nov 09 20:52:47 CET 2020
-base.0=C\:\\Users\\josew\\AndroidStudioProjects\\AndroidPuzzleGame-Ultimo\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Mon Nov 30 23:11:53 CET 2020
+base.0=C\:\\Users\\josew\\AndroidStudioProjects\\AppDroid8-main (Musica+Alarma)\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

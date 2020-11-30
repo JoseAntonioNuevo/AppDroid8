@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\josew\\AndroidStudioProjects\\AndroidPuzzleGame-Ultimo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
+            "outputFile": "C:\\Users\\josew\\AndroidStudioProjects\\AppDroid8-main (Musica+Alarma)\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\josew\\.gradle\\caches\\transforms-2\\files-2.1\\ff19cd21bc28a503476b6dbfb05a4f81\\appcompat-v7-28.0.0\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\josew\\.gradle\\caches\\transforms-2\\files-2.1\\7f3fa8d587d4363e1ca9ee9b95b784e2\\appcompat-v7-28.0.0\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\josew\\.gradle\\caches\\transforms-2\\files-2.1\\c0cb3774a80c4fd31a127a7f2a8e9b0f\\design-28.0.0\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\josew\\.gradle\\caches\\transforms-2\\files-2.1\\bbff6877ad5afecd256f9fb3033472f5\\design-28.0.0\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

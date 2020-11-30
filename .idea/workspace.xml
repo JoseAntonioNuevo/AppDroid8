@@ -10,10 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9eff506f-70ee-4f82-8737-49e286e5461d" name="Default Changelist" comment="puntuacion working">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/logobg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AndroidPuzzleGame-Ultimo/app/google-services.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AndroidPuzzleGame-Ultimo/app/src/main/java/dragosholban/com/androidpuzzlegame/NonNull.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AndroidPuzzleGame-Ultimo/app/src/main/res/drawable/logobg.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../AppDroid8-Producto1.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dragosholban/com/androidpuzzlegame/Puntuacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dragosholban/com/androidpuzzlegame/Puntuacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_puntuacion.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_puntuacion.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/AppDroid8-main (Musica).iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/markdown-navigator-enh.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/markdown-navigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AndroidPuzzleGame-Ultimo/app/src/main/java/dragosholban/com/androidpuzzlegame/First2Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AndroidPuzzleGame-Ultimo/app/src/main/java/dragosholban/com/androidpuzzlegame/First2Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AndroidPuzzleGame-Ultimo/app/src/main/java/dragosholban/com/androidpuzzlegame/Puntuacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AndroidPuzzleGame-Ultimo/app/src/main/java/dragosholban/com/androidpuzzlegame/Puntuacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AndroidPuzzleGame-Ultimo/app/src/main/res/layout/activity_puntuacion.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AndroidPuzzleGame-Ultimo/app/src/main/res/layout/activity_puntuacion.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AppDroid8" beforeDir="false" afterPath="$PROJECT_DIR$/../AppDroid8" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,17 +65,21 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="9d12463e" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-11-09T17:35:45.250Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_2_API_30" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-11-21T21:45:15.042Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.updates" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.-504201578">
       <recent name="dragosholban.com.androidpuzzlegame" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\DAM\app\P 2\AppDroid8-main (2)\AppDroid8-main\app\src\main\res\drawable" />
+      <recent name="C:\DAM\app\P 2\AppDroid8-main (2)\AppDroid8-main\app\src\main\res\raw" />
     </key>
   </component>
   <component name="RunManager">
@@ -79,7 +91,7 @@
       </method>
     </configuration>
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="AndroidPuzzleGame-Ultimo.app" />
+      <module name="AppDroid8-main_(Musica+Alarma).app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -163,14 +175,18 @@
     <option name="LAST_COMMIT_MESSAGE" value="puntuacion working" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="845" y="382" key="#Notifications" timestamp="1605995071482">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="845" y="382" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1605995071482" />
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604592292146">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1604592292146" />
-    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser" timestamp="1604950598556">
+    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser" timestamp="1606760639128">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1604950598556" />
+    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1606760639128" />
     <state x="448" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1604592484438">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -183,13 +199,90 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="293" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1604850082585" />
-    <state x="585" y="308" key="FileChooserDialogImpl" timestamp="1604852139544">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="731" y="389" key="FileChooserDialogImpl" timestamp="1605996326380">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="585" y="308" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1604852139544" />
+    <state x="731" y="389" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605996326380" />
+    <state width="1476" height="207" key="GridCell.Tab.0.bottom" timestamp="1606762404193">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1476" height="207" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606762404193" />
+    <state width="825" height="137" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605994198632" />
+    <state width="1476" height="207" key="GridCell.Tab.0.center" timestamp="1606762404193">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1476" height="207" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606762404193" />
+    <state width="825" height="137" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605994198632" />
+    <state width="1476" height="207" key="GridCell.Tab.0.left" timestamp="1606762404193">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1476" height="207" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606762404193" />
+    <state width="825" height="137" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605994198631" />
+    <state width="1476" height="207" key="GridCell.Tab.0.right" timestamp="1606762404193">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1476" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606762404193" />
+    <state width="825" height="137" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605994198632" />
+    <state width="1476" height="207" key="GridCell.Tab.1.bottom" timestamp="1606762404194">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1476" height="207" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606762404194" />
+    <state width="1476" height="207" key="GridCell.Tab.1.center" timestamp="1606762404194">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1476" height="207" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1606762404194" />
+    <state width="1476" height="207" key="GridCell.Tab.1.left" timestamp="1606762404194">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1476" height="207" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1606762404194" />
+    <state width="1476" height="207" key="GridCell.Tab.1.right" timestamp="1606762404194">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1476" height="207" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1606762404194" />
+    <state x="540" y="262" key="IDE.errors.dialog" timestamp="1605993745367">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="540" y="262" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605993745367" />
+    <state x="555" y="48" key="SettingsEditor" timestamp="1606761113191">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="555" y="48" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606761113191" />
+    <state x="703" y="60" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605996302902" />
     <state x="855" y="224" key="com.android.tools.idea.run.deployment.ModifyDeviceSetDialog" timestamp="1604942566815">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="855" y="224" key="com.android.tools.idea.run.deployment.ModifyDeviceSetDialog/0.0.1536.824@0.0.1536.824" timestamp="1604942566815" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dragosholban/com/androidpuzzlegame/MainActivity.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dragosholban/com/androidpuzzlegame/MainActivity.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dragosholban/com/androidpuzzlegame/MainActivity.java</url>
+          <line>303</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dragosholban/com/androidpuzzlegame/MainActivity.java</url>
+          <line>312</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/dragosholban/com/androidpuzzlegame/MainActivity.java</url>
+          <line>313</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

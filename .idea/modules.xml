@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidPuzzleGame-Ultimo.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidPuzzleGame-Ultimo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidPuzzleGame-Ultimo.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidPuzzleGame-Ultimo.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AppDroid8-main_(Musica+Alarma).iml" filepath="$PROJECT_DIR$/.idea/modules/AppDroid8-main_(Musica+Alarma).iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AppDroid8-main_(Musica+Alarma).app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AppDroid8-main_(Musica+Alarma).app.iml" />
     </modules>
   </component>
 </project>
