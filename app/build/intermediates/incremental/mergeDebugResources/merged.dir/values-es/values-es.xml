@@ -27,8 +27,23 @@
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Compartir con"</string>
     <string msgid="3300176832234831527" name="abc_shareactionprovider_share_with_application">"Compartir con <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Contraer"</string>
+    <string name="app_name">AndroidPuzzleGame</string>
+    <string name="calendar">Añadir al calendario</string>
+    <string name="first_fragment_label">Primer fragmento</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string msgid="6301633601645100427" name="nav_app_bar_navigate_up_description">"Desplazarse hacia arriba"</string>
     <string msgid="7456070600745802113" name="nav_app_bar_open_drawer_description">"Abrir panel de navegación"</string>
+    <string name="next">Siguiente</string>
+    <string name="previous">Anterior</string>
+    <string name="retry">Reintentar</string>
+    <string name="scores">Puntuaciones</string>
     <string msgid="146198913615257606" name="search_menu_title">"Buscar"</string>
+    <string name="second_fragment_label">Segundo fragmento</string>
+    <string name="seconds">Segundos</string>
+    <string name="selector">Selector de nivel</string>
     <string msgid="7988687684186075107" name="status_bar_notification_info_overflow">"+999"</string>
+    <string name="tardado">Bien hecho, has tardado</string>
+    <string name="title_activity_puntuacion">Puntuacion</string>
+    <string name="title_activity_web">web</string>
 </resources>

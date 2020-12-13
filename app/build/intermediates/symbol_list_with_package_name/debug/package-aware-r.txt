@@ -1199,6 +1199,7 @@ id puntuacion
 id puntuaciones
 id radio
 id received_value_id
+id received_value_id2
 id reintentar
 id right
 id right_icon
@@ -1414,6 +1415,7 @@ string abc_toolbar_collapse_description
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
+string calendar
 string character_counter_content_description
 string character_counter_pattern
 string fab_transformation_scrim_behavior
@@ -1432,9 +1434,14 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string previous
+string retry
+string scores
 string search_menu_title
 string second_fragment_label
+string seconds
+string selector
 string status_bar_notification_info_overflow
+string tardado
 string title_activity_puntuacion
 string title_activity_web
 style AlertDialog_AppCompat

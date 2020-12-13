@@ -101,7 +101,7 @@ public class Puntuacion extends AppCompatActivity {
 
         receiver_msg = (TextView) findViewById(R.id.received_value_id);
 
-        receiver_msg.setText(punt1+" segundos");
+        receiver_msg.setText(punt1);
 
 
 
@@ -110,8 +110,8 @@ public class Puntuacion extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void createNotificationChannel(){
 
-           CharSequence name = "¡Nuevo Record!";
-           String description = "Has logrado un nuevo record: puzle completado en 20 segundos";
+           CharSequence name = "¡New Record!";
+           String description = "You earned a new record: puzle completed in 20 seconds";
            int importance = NotificationManager.IMPORTANCE_DEFAULT;
         NotificationChannel channel = new NotificationChannel("record", name, importance);
         channel.setDescription(description);
@@ -128,8 +128,8 @@ public class Puntuacion extends AppCompatActivity {
 
         Intent intent = new Intent(Intent.ACTION_INSERT);
         intent.setData(CalendarContract.Events.CONTENT_URI);
-        intent.putExtra(CalendarContract.Events.TITLE, "Puntuaciones PuzzleDroid8");
-        intent.putExtra(CalendarContract.Events.DESCRIPTION, "Puntuación obtenida: "+punt+" segundos");
+        intent.putExtra(CalendarContract.Events.TITLE, "Scores PuzzleDroid8");
+        intent.putExtra(CalendarContract.Events.DESCRIPTION, "Score: "+punt+" seconds");
         intent.putExtra("beginTime", calendar.getTimeInMillis());
                 intent.putExtra("allDay", false);
                 intent.putExtra("endTime", calendar.getTimeInMillis());
@@ -137,7 +137,7 @@ public class Puntuacion extends AppCompatActivity {
         if(intent.resolveActivity(getPackageManager()) != null){
             startActivity(intent);
         }else{
-            Toast.makeText(Puntuacion.this, "No tienes calendario", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Puntuacion.this, "You don't have any calendar", Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -168,7 +168,7 @@ public class Puntuacion extends AppCompatActivity {
 
         if (c.moveToFirst()) {
             do {
-                dd = c.getInt(0) + " Segundos";
+                dd = c.getInt(0) + " Sec";
                 names.add(dd);
             } while (c.moveToNext());
 
@@ -178,15 +178,15 @@ public class Puntuacion extends AppCompatActivity {
         listview.setAdapter(adapter);
 
         //Almacena la posición 0 del array
-        int position = names.indexOf(punt+ " Segundos");
+        int position = names.indexOf(punt+ " Seconds");
 
         //Comprueba que la posición es 0, es decir la máxima puntuación
         if (position==0) {
             createNotificationChannel();
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "record")
                     .setSmallIcon(R.drawable.logobg)
-                    .setContentTitle("¡Nuevo Record!")
-                    .setContentText("Has logrado un nuevo record: puzzle completado en "+punt+" segundos")
+                    .setContentTitle("¡New Record!")
+                    .setContentText("You have achieved a new record: Puzzle completed in "+punt+" seconds")
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
             NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
@@ -212,7 +212,7 @@ public class Puntuacion extends AppCompatActivity {
         values.put(CAMPO_ID,punt);
         Long idResultante=db.insert(TABLA_PUNTUACIONES, CAMPO_PUNTUACION,values);
 
-        Toast.makeText(getApplicationContext(),"¡Puzzle Completado!",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),"¡Puzzle Completed!",Toast.LENGTH_SHORT).show();
 
     }
 

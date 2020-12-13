@@ -27,56 +27,63 @@
 
     <Button
         android:id="@+id/niveles"
-        android:layout_marginLeft="170dp"
-        android:layout_marginTop="540dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Salector de niveles" />
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="540dp"
+        android:text="@string/selector" />
 
     <Button
         android:id="@+id/reintentar"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="540dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Reintentar" />
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="540dp"
+        android:text="@string/retry" />
 
     <Button
         android:id="@+id/calendario"
-        android:layout_marginLeft="88dp"
-        android:layout_marginTop="600dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Añadir a calendario" />
+        android:layout_marginLeft="88dp"
+        android:layout_marginTop="600dp"
+        android:text="@string/calendar" />
 
     <TextView
         android:id="@+id/punt"
-        android:layout_marginTop="130dp"
-        android:layout_marginLeft="76dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Puntuaciones totales"
-        />
-
+        android:layout_marginLeft="76dp"
+        android:layout_marginTop="130dp"
+        android:text="@string/scores" />
 
 
     <TextView
         android:id="@+id/punt3"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="40dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bien hecho, has tardado "
-        />
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/tardado" />
 
 
     <TextView
         android:id="@+id/received_value_id"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="197dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="13 segundos "
+        android:layout_marginLeft="197dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/seconds"
+
+        />
+
+    <TextView
+        android:id="@+id/received_value_id2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/seconds"
 
         />
 
