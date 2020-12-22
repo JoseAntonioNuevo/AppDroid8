@@ -13,6 +13,13 @@ dragosholban/com/androidpuzzlegame/MainActivity.java
  dragosholban.com.androidpuzzlegame.MainActivity
  dragosholban.com.androidpuzzlegame.MainActivity$1
  dragosholban.com.androidpuzzlegame.MainActivity$2
+ dragosholban.com.androidpuzzlegame.MainActivity$3
+ dragosholban.com.androidpuzzlegame.MainActivity$4
+ dragosholban.com.androidpuzzlegame.MainActivity$5
+ dragosholban.com.androidpuzzlegame.MainActivity$6
+ dragosholban.com.androidpuzzlegame.MainActivity$7
+ dragosholban.com.androidpuzzlegame.MainActivity$8
+ dragosholban.com.androidpuzzlegame.MainActivity$9
  dragosholban.com.androidpuzzlegame.MainActivity$AudioFocusChangeListenerImpl
 dragosholban/com/androidpuzzlegame/PuzzlePiece.java
  dragosholban.com.androidpuzzlegame.PuzzlePiece
@@ -36,6 +43,9 @@ dragosholban/com/androidpuzzlegame/Puntuacion.java
  dragosholban.com.androidpuzzlegame.Puntuacion$1
  dragosholban.com.androidpuzzlegame.Puntuacion$2
  dragosholban.com.androidpuzzlegame.Puntuacion$3
+ dragosholban.com.androidpuzzlegame.Puntuacion$4
+ dragosholban.com.androidpuzzlegame.Puntuacion$5
+ dragosholban.com.androidpuzzlegame.Puntuacion$6
 dragosholban/com/androidpuzzlegame/entidades/Usuario.java
  uoc.appdroid8.entidades.Usuario
 dragosholban/com/androidpuzzlegame/SecondFragment.java

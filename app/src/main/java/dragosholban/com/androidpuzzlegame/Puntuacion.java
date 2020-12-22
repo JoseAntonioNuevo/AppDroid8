@@ -10,10 +10,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.CalendarContract;
-import android.support.annotation.RequiresApi;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationManagerCompat;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -21,10 +25,26 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.common.util.Strings;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.type.DateTime;
+
 import java.io.IOException;
+import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 import static uoc.appdroid8.utilidades.Utilidades.CAMPO_ID;
 import static uoc.appdroid8.utilidades.Utilidades.CAMPO_PUNTUACION;
@@ -37,10 +57,12 @@ public class Puntuacion extends AppCompatActivity {
     ArrayAdapter adaptador;
     private ListView listview;
     private ArrayList<String> names;
+    private ArrayList<String> scores;
     TextView receiver_msg;
     private Button returnButton;
     private Button niveles;
     private Button calendario;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -48,6 +70,8 @@ public class Puntuacion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_puntuacion);
+
+
 
         AssetManager am = getAssets();
         try {
@@ -89,6 +113,7 @@ public class Puntuacion extends AppCompatActivity {
 
 
         registrarPuntuacion(punt);
+        addData(punt);
         //deleteTitle(9999);
 
         cargarDatos(punt);
@@ -158,13 +183,35 @@ public class Puntuacion extends AppCompatActivity {
     private void cargarDatos(int punt) {
         String dd;
         uoc.appdroid8.entidades.ConexionSQLiteHelper conn = new uoc.appdroid8.entidades.ConexionSQLiteHelper(this, "bd_appdroid8", null, 1);
-        SQLiteDatabase db = conn.getReadableDatabase();
-        Cursor c = db.rawQuery("select * from puntuaciones ORDER BY id ASC", null);
+        SQLiteDatabase db2 = conn.getReadableDatabase();
+        Cursor c = db2.rawQuery("select * from puntuaciones ORDER BY id ASC", null);
         int cantidad = c.getCount();
         int i = 0;
         listview = (ListView) findViewById(R.id.puntuaciones);
 
         names = new ArrayList<String>();
+        scores = new ArrayList<String>();
+        db.collection("Puntuacion")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                String value = document.getData().toString();
+                                value = value.substring(0,value.length()-1);
+                                String[] value2 = value.split("=");
+                                scores.add(value2[1]+" sec");
+                            }
+                        } else {
+                            Toast.makeText(getApplicationContext(),"Error getting documents.",Toast.LENGTH_SHORT).show();
+
+                        }
+                        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, scores);
+                        listview.setAdapter(adapter);
+                    }
+
+                });
 
         if (c.moveToFirst()) {
             do {
@@ -174,8 +221,7 @@ public class Puntuacion extends AppCompatActivity {
 
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, names);
-        listview.setAdapter(adapter);
+
 
         //Almacena la posición 0 del array
         int position = names.indexOf(punt+ " Seconds");
@@ -199,7 +245,26 @@ public class Puntuacion extends AppCompatActivity {
     public void onclick(View view){
         // registrarPuntuacion();
     }
+    public void addData(Integer puntuacion){
+        Map<String,Object> mapPuntuacion = new HashMap<>();
+        mapPuntuacion.put("Puntuacion", puntuacion);
 
+
+        db.collection("Puntuacion")
+                .add(mapPuntuacion)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Toast.makeText(getApplicationContext(),"Score save in a server",Toast.LENGTH_LONG).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_LONG).show();
+                    }
+                });
+    }
     private void registrarPuntuacion(Integer punt){
         uoc.appdroid8.entidades.ConexionSQLiteHelper conn = new uoc.appdroid8.entidades.ConexionSQLiteHelper(this, "bd_appdroid8", null, 1);
         SQLiteDatabase db= conn.getWritableDatabase();

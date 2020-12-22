@@ -5,24 +5,46 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.FileProvider;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
+import androidx.appcompat.app.AppCompatActivity;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
 import java.io.IOException;
@@ -43,10 +65,37 @@ public class MainActivity extends AppCompatActivity {
     int repetir = 2, posicion = 0;
     MediaPlayer vectormp[] = new MediaPlayer[3];
 
+    private static final String TAG = "GoogleActivity";
+    private static final int RC_SIGN_IN = 9001;
+    private FirebaseAuth mAuth;
+    private GoogleSignInClient mGoogleSignInClient;
+    public StorageReference mStorageRef;
+    public StorageReference mStorageRef2;
+    public StorageReference mStorageRef3;
+    public String ruta_jaws;
+    public String ruta_empires;
+    public String ruta_back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // [START config_signin]
+        // Configure Google Sign In
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken("20930305024-h2fb6et223n3kemm6f7k5tlhmpk1nnci.apps.googleusercontent.com")
+                .requestEmail()
+                .build();
+        // [END config_signin]
+
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        mStorageRef = FirebaseStorage.getInstance().getReference().child("/jaws_firebase.jpg");
+        mStorageRef2 = FirebaseStorage.getInstance().getReference().child("/empire_firebase.jpg");
+        mStorageRef3 = FirebaseStorage.getInstance().getReference().child("/back_firebase.jpg");
+        // [START initialize_auth]
+        // Initialize Firebase Auth
+        mAuth = FirebaseAuth.getInstance();
+        // [END initialize_auth]
+
         ;
         play_pause = (Button) findViewById(R.id.btn_play);
         btn_repetir = (Button) findViewById(R.id.btn_repetir);
@@ -56,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
         vectormp[2] = MediaPlayer.create(this, R.raw.mind);
 
         AssetManager am = getAssets();
+
 
         mp = MediaPlayer.create(this, R.raw.long_song);
         mp.start();
@@ -102,7 +152,27 @@ public class MainActivity extends AppCompatActivity {
         }
         nivelgame = nivelgame + 1;
     }
+    public void puzzle_jaws(View view){
 
+        PuzzleActivity.nivel = 3;
+        Intent intent = new Intent(this, PuzzleActivity.class);
+        intent.putExtra("mCurrentPhotoUri", ruta_jaws);
+        startActivity(intent);
+    }
+    public void puzzle_back(View view){
+
+        PuzzleActivity.nivel = 3;
+        Intent intent = new Intent(this, PuzzleActivity.class);
+        intent.putExtra("mCurrentPhotoUri", ruta_back);
+        startActivity(intent);
+    }
+    public void puzzle_empire(View view){
+
+        PuzzleActivity.nivel = 3;
+        Intent intent = new Intent(this, PuzzleActivity.class);
+        intent.putExtra("mCurrentPhotoUri", ruta_empires);
+        startActivity(intent);
+    }
     public void onhelpbutton(View view) {
         Intent intent = new Intent(this, Web.class);
 
@@ -149,6 +219,81 @@ public class MainActivity extends AppCompatActivity {
         return null;
     }
 
+    public void loagImagesFirebase_jaws(){
+
+        try {
+            final File localFile = File.createTempFile("jaws_firebase", "jpg");
+            ruta_jaws= localFile.getAbsolutePath();
+            mStorageRef.getFile(localFile)
+                    .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+
+                            Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
+                            ((ImageView)findViewById(R.id.imagejaws)).setImageBitmap(bitmap);
+                        }
+                    }) .addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText( MainActivity.this, "Foto No Cargada "+e.getMessage(),Toast.LENGTH_SHORT).show();
+                }
+            });
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+    public void loagImagesFirebase_empires(){
+
+        try {
+            final File localFile = File.createTempFile("empire_firebase", "jpg");
+            ruta_empires= localFile.getAbsolutePath();
+            mStorageRef2.getFile(localFile)
+                    .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+
+                            Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
+                            ((ImageView)findViewById(R.id.imageempire)).setImageBitmap(bitmap);
+                        }
+                    }) .addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText( MainActivity.this, "Foto No Cargada "+e.getMessage(),Toast.LENGTH_SHORT).show();
+                }
+            });
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+    public void loagImagesFirebase_back(){
+
+        try {
+            final File localFile = File.createTempFile("back_firebase", "jpg");
+            ruta_back= localFile.getAbsolutePath();
+            mStorageRef3.getFile(localFile)
+                    .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+
+                            Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
+                            ((ImageView)findViewById(R.id.imageback)).setImageBitmap(bitmap);
+                        }
+                    }) .addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText( MainActivity.this, "Foto No Cargada "+e.getMessage(),Toast.LENGTH_SHORT).show();
+                }
+            });
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
@@ -164,19 +309,72 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
+        if (requestCode == RC_SIGN_IN) {
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            try {
+                // Google Sign In was successful, authenticate with Firebase
+                GoogleSignInAccount account = task.getResult(ApiException.class);
+                Toast.makeText(getApplicationContext(),"Google sign in",Toast.LENGTH_LONG).show();
+                Log.d(TAG, "firebaseAuthWithGoogle:" + account.getId());
+                firebaseAuthWithGoogle(account.getIdToken());
+            } catch (ApiException e) {
+                // Google Sign In failed, update UI appropriately
+                Log.w(TAG, "Google sign in failed", e);
+                Toast.makeText(getApplicationContext(), e.getMessage(),Toast.LENGTH_LONG).show();
+                // [START_EXCLUDE]
+
+                // [END_EXCLUDE]
+            }
+        }
+
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Intent intent = new Intent(this, PuzzleActivity.class);
-            PuzzleActivity.nivel = 1;
+            PuzzleActivity.nivel = 3;
             intent.putExtra("mCurrentPhotoPath", mCurrentPhotoPath);
             startActivity(intent);
         }
         if (requestCode == REQUEST_IMAGE_GALLERY && resultCode == RESULT_OK) {
             Uri uri = data.getData();
-            PuzzleActivity.nivel = 1;
+            PuzzleActivity.nivel = 3;
             Intent intent = new Intent(this, PuzzleActivity.class);
             intent.putExtra("mCurrentPhotoUri", uri.toString());
             startActivity(intent);
         }
+    }
+
+    private void firebaseAuthWithGoogle(String idToken) {
+        // [START_EXCLUDE silent]
+
+        // [END_EXCLUDE]
+        AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
+        mAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@androidx.annotation.NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+
+                            Log.d(TAG, "signInWithCredential:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "signInWithCredential:failure", task.getException());
+                            Toast.makeText(getApplicationContext(),"signInWithCredential:failure",Toast.LENGTH_LONG).show();
+                        }
+
+                    }
+                });
+    }
+    public void signIn(View view) {
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+        loagImagesFirebase_empires();
+        loagImagesFirebase_jaws();
+        loagImagesFirebase_back();
     }
 
     public void onImageFromGalleryClick(View view) {

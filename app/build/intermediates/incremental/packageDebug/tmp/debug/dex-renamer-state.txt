@@ -1,4 +1,10 @@
-#Sun Dec 13 15:31:56 CET 2020
-base.0=C\:\\Users\\josew\\AndroidStudioProjects\\AppDroid8-main (Musica+Alarma)\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-path.0=classes.dex
+#Fri Dec 18 10:51:52 CET 2020
+base.2=C\:\\Users\\Manu\\Downloads\\AppDroid8-Idiomas (1)\\AppDroid8-main (Musica+Alarma)\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+path.2=classes2.dex
+base.1=C\:\\Users\\Manu\\Downloads\\AppDroid8-Idiomas (1)\\AppDroid8-main (Musica+Alarma)\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\classes.dex
+path.1=classes.dex
+base.0=C\:\\Users\\Manu\\Downloads\\AppDroid8-Idiomas (1)\\AppDroid8-main (Musica+Alarma)\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
 renamed.0=classes.dex
+path.0=classes.dex

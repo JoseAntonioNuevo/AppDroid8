@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "20930305024",
+    "project_id": "puzzle-9327a",
+    "storage_bucket": "puzzle-9327a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20930305024:android:bf49d3bc50a6aba1134ce5",
+        "android_client_info": {
+          "package_name": "dragosholban.com.androidpuzzlegame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "20930305024-d3n23131uag8a1qrabitmtl5hhsaa8sp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dragosholban.com.androidpuzzlegame",
+            "certificate_hash": "f6684cafee67df793cd3e04ce1cf41351d4b00b1"
+          }
+        },
+        {
+          "client_id": "20930305024-h2fb6et223n3kemm6f7k5tlhmpk1nnci.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQqoazcT2rdLpIIAVGjNAuxlbeKseqlU8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "20930305024-h2fb6et223n3kemm6f7k5tlhmpk1nnci.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

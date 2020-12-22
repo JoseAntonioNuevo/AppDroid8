@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\Manu\\Downloads\\AppDroid8-Idiomas (1)\\AppDroid8-main (Musica+Alarma)\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en\\values-en.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Manu\\Downloads\\AppDroid8-Idiomas (1)\\AppDroid8-main (Musica+Alarma)\\app\\src\\main\\res\\values-en\\strings.xml",
+                    "from": {
+                        "startLines": "2,14,5,16,17,7,8,12,11,6,10,13,9,18,3",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "57,681,221,737,808,353,392,587,544,286,499,628,439,892,113",
+                        "endColumns": "54,52,63,69,82,37,45,39,41,65,43,51,58,59,50",
+                        "endOffsets": "107,729,280,802,886,386,433,622,581,347,538,675,493,947,159"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,110,163,227,297,380,418,464,504,546,612,656,708,767,827",
+                        "endColumns": "54,52,63,69,82,37,45,39,41,65,43,51,58,59,50",
+                        "endOffsets": "105,158,222,292,375,413,459,499,541,607,651,703,762,822,873"
+                    }
+                }
+            ]
+        }
+    ]
+}
