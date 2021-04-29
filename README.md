@@ -1,4 +1,2 @@
 # AndroidPuzzleGame
-This is the source code for the tutorial published here:
-
-https://dragosholban.com/
+Videojuego de puzles para Android
